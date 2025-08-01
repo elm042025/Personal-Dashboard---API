@@ -90,11 +90,11 @@
             <li id="favorites">
                <a href="">
                   <lord-icon
-                     src="https://cdn.lordicon.com/cvwrvyjv.json"
+                     src="https://cdn.lordicon.com/nvsfzbop.json"
                      trigger="in"
                      delay="250"
                      stroke="bold"
-                     state="in-dynamic"
+                     state="in-reveal"
                      colors="primary:#e4e4e4,secondary:#30c9e8"
                      style="width: 3rem; height: 3rem"
                   >
@@ -139,31 +139,74 @@
 
       <section id="content">
          <header>
-            <section id="search">
+            <form id="search">
+               <button id="search-button">
+                  <lord-icon
+                     src="https://cdn.lordicon.com/wjyqkiew.json"
+                     trigger="in"
+                     stroke="bold"
+                     state="in-reveal"
+                     delay="250"
+                     colors="primary:#e4e4e4,secondary:#30c9e8"
+                     style="width: 1.5rem; height: 1.5rem"
+                  >
+                  </lord-icon>
+               </button>
+
                <input
                   type="text"
                   id="search-input"
                   placeholder="Search for a show..."
                />
-               <button id="search-button">Search</button>
+            </form>
+            <section id="user-profile">
+               <a href="">
+                  <lord-icon
+                     src="https://cdn.lordicon.com/shcfcebj.json"
+                     trigger="in"
+                     delay="250"
+                     stroke="bold"
+                     state="in-reveal"
+                     colors="primary:#e4e4e4,secondary:#30c9e8"
+                     style="width: 3rem; height: 3rem"
+                  >
+                  </lord-icon>
+               </a>
             </section>
          </header>
          <main>
+            <section id="featured-shows"></section>
             <article class="show-card">
                <img
                   src="https://static.tvmaze.com/uploads/images/medium_portrait/0/2400.jpg"
                   alt="Vikings poster"
                />
-               <div class="card-content">
+               <section class="card-content">
                   <h2>Vikings</h2>
                   <p>🧭 Genre: Action, Drama</p>
                   <p>⭐ Rating: 8.5</p>
                   <p>📅 Premiered: 2013</p>
-                  <div class="card-buttons">
-                     <button class="watch-btn">✅ Watched</button>
-                     <button class="later-btn">🕒 Watch Later</button>
-                  </div>
-               </div>
+                  <section class="card-buttons">
+                     <button
+                        class="later-btn"
+                        title="🕒 Watch Later"
+                     >
+                        🕒 Watch Later
+                     </button>
+                     <button
+                        class="watch-btn"
+                        title="✅ Watched"
+                     >
+                        ✅ Watched
+                     </button>
+                     <button
+                        class="fav-btn"
+                        title="❤️ Favorite"
+                     >
+                        ❤️ Favorite
+                     </button>
+                  </section>
+               </section>
             </article>
          </main>
          <footer></footer>
