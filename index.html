@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta
+         name="viewport"
+         content="width=device-width, initial-scale=1.0"
+      />
+      <link
+         rel="shortcut icon"
+         href="assets/fav-icon2.png"
+         type="image/x-icon"
+      />
+      <title>Watchlist Dashboard</title>
+      <link
+         rel="stylesheet"
+         href="style.css"
+      />
+      <script
+         src="script.js"
+         defer
+      ></script>
+      <script src="https://cdn.lordicon.com/lordicon.js"></script>
+   </head>
+   <body>
+      <aside id="sidebar">
+         <section id="logo">
+            <lord-icon
+               src="https://cdn.lordicon.com/ldyubhgs.json"
+               trigger="loop"
+               stroke="bold"
+               colors="primary:#e4e4e4,secondary:#30c9e8"
+               style="width: 3rem; height: 3rem"
+            >
+            </lord-icon>
+            <h1>Watchlist Dashboard</h1>
+         </section>
+         <ul id="menu">
+            <li id="home">
+               <a
+                  href=""
+                  class="active"
+               >
+                  <lord-icon
+                     src="https://cdn.lordicon.com/jeuxydnh.json"
+                     trigger="in"
+                     delay="250"
+                     stroke="bold"
+                     state="in-reveal"
+                     colors="primary:#e4e4e4,secondary:#30c9e8"
+                     style="width: 3rem; height: 3rem"
+                  >
+                  </lord-icon>
+                  <p>Home</p>
+               </a>
+            </li>
+
+            <li id="movies">
+               <a href="">
+                  <lord-icon
+                     src="https://cdn.lordicon.com/ugllxeyl.json"
+                     trigger="in"
+                     delay="250"
+                     stroke="bold"
+                     state="in-reveal"
+                     colors="primary:#e4e4e4,secondary:#30c9e8"
+                     style="width: 3rem; height: 3rem"
+                  >
+                  </lord-icon>
+                  <p>Movies</p>
+               </a>
+            </li>
+
+            <li id="tv-shows">
+               <a href="">
+                  <lord-icon
+                     src="https://cdn.lordicon.com/qfwgmyhc.json"
+                     trigger="in"
+                     delay="250"
+                     stroke="bold"
+                     state="in-reveal"
+                     colors="primary:#e4e4e4,secondary:#30c9e8"
+                     style="width: 3rem; height: 3rem"
+                  >
+                  </lord-icon>
+                  <p>TV Shows</p>
+               </a>
+            </li>
+
+            <li id="favorites">
+               <a href="">
+                  <lord-icon
+                     src="https://cdn.lordicon.com/cvwrvyjv.json"
+                     trigger="in"
+                     delay="250"
+                     stroke="bold"
+                     state="in-dynamic"
+                     colors="primary:#e4e4e4,secondary:#30c9e8"
+                     style="width: 3rem; height: 3rem"
+                  >
+                  </lord-icon>
+                  <p>Favorites</p>
+               </a>
+            </li>
+
+            <li id="watch-later">
+               <a href="">
+                  <lord-icon
+                     src="https://cdn.lordicon.com/warimioc.json"
+                     trigger="in"
+                     delay="250"
+                     stroke="bold"
+                     state="in-reveal"
+                     colors="primary:#e4e4e4,secondary:#30c9e8"
+                     style="width: 3rem; height: 3rem"
+                  >
+                  </lord-icon>
+                  <p>Watch Later</p>
+               </a>
+            </li>
+
+            <li id="watched">
+               <a href="">
+                  <lord-icon
+                     src="https://cdn.lordicon.com/dicvhxpz.json"
+                     trigger="in"
+                     delay="250"
+                     stroke="bold"
+                     state="in-reveal"
+                     colors="primary:#e4e4e4,secondary:#30c9e8"
+                     style="width: 3rem; height: 3rem"
+                  >
+                  </lord-icon>
+                  <p>Watched</p>
+               </a>
+            </li>
+         </ul>
+      </aside>
+
+      <section id="content">
+         <header>
+            <section id="search">
+               <input
+                  type="text"
+                  id="search-input"
+                  placeholder="Search for a show..."
+               />
+               <button id="search-button">Search</button>
+            </section>
+         </header>
+         <main>
+            <article class="show-card">
+               <img
+                  src="https://static.tvmaze.com/uploads/images/medium_portrait/0/2400.jpg"
+                  alt="Vikings poster"
+               />
+               <div class="card-content">
+                  <h2>Vikings</h2>
+                  <p>🧭 Genre: Action, Drama</p>
+                  <p>⭐ Rating: 8.5</p>
+                  <p>📅 Premiered: 2013</p>
+                  <div class="card-buttons">
+                     <button class="watch-btn">✅ Watched</button>
+                     <button class="later-btn">🕒 Watch Later</button>
+                  </div>
+               </div>
+            </article>
+         </main>
+         <footer></footer>
+      </section>
+   </body>
+</html>
