@@ -163,9 +163,10 @@ main h3 {
    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
    overflow: hidden;
    width: 14rem;
-   height: 36rem;
-   max-width: 40rem;
    transition: transform 0.2s ease;
+   cursor: pointer;
+   flex-shrink: 0;
+   margin-bottom: 1rem;
 }
 
 .show-card:hover {
