@@ -35,23 +35,24 @@ function renderSearchResults(searchResult) {
    }
 
    main.innerHTML = searchResult
-      .map(
-         (show) => `
+      .map((show) => {
+         const { image, name, premiered, genres, rating, type } = show;
+         return `
             <article class="show-card">
             <img
             src="${
-               show.image
-                  ? show.image.medium || show.image.original
+               image
+                  ? image.medium || image.original
                   : "https://st3.depositphotos.com/17828278/33150/v/450/depositphotos_331503262-stock-illustration-no-image-vector-symbol-missing.jpg"
             }"
             alt="${show.name} poster"
             />
                <section class="card-details">
                     <section class="card-header">
-                        <h2>${show.name} (${show.premiered})</h2>
-                        <p>🧭 Genre: ${show.genres.join(", ")}</p>
-                        <p>⭐ Rating: ${show.rating.average}</p>
-                        <p>🏷️ Type: ${show.type}</p>
+                        <h2>${name} (${premiered ? premiered.slice(0, 4) : "N/A"})</h2>
+                        <p><span>🧭</span> Genre: ${genres ? genres.join(", ") : "N/A"}</p>
+                        <p><span>⭐</span> Rating: ${rating.average ? rating.average : "N/A"}</p>
+                        <p><span>🏷️</span> Type: ${type ? type : "N/A"}</p>
                     </section>
                     <section class="card-buttons">
                         <button
@@ -69,8 +70,8 @@ function renderSearchResults(searchResult) {
                     </section>
                </section>
             </article>
-   `
-      )
+   `;
+      })
       .join("");
 }
 
