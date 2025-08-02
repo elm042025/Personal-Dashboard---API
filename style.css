@@ -4,6 +4,10 @@
    box-sizing: border-box;
    color: whitesmoke;
 }
+.width-100 {
+   width: 100%;
+   text-align: center;
+}
 body {
    background-color: #101d24;
    font-family: "Poppins", sans-serif;
@@ -213,7 +217,7 @@ main h3 {
    border: none;
    border-radius: 4px;
    cursor: pointer;
-   font-size: 0.75rem;
+   font-size: 1rem;
 }
 
 .watch-later-btn {

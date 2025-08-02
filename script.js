@@ -2,7 +2,7 @@ const searchBtn = document.querySelector("#search-button");
 const searchInput = document.querySelector("#search-input");
 const main = document.querySelector("#main-content");
 
-//! ---------- Search Button Click Event / api fetch fn ----------  */
+//! ---------- Search Button Click Event / api fetch fn ----------  //
 
 searchBtn.addEventListener("click", async function (event) {
    event.preventDefault();
@@ -16,7 +16,6 @@ searchBtn.addEventListener("click", async function (event) {
          const response = await fetch(url);
          const data = await response.json();
          const searchResult = data.map((item) => item.show);
-         console.log(searchResult);
          renderSearchResults(searchResult);
          return searchResult;
       } catch (error) {
@@ -87,9 +86,6 @@ function renderSearchResults(searchResult) {
    main.appendChild(resultsCount);
 
    if (searchResult.length === 0) {
-      //   const message = document.createElement("p");
-      //   message.textContent = "No results found.";
-      //   main.appendChild(message);
       return;
    }
 
@@ -102,10 +98,7 @@ function renderSearchResults(searchResult) {
 
       // Poster image
       const img = document.createElement("img");
-      img.src =
-         image?.medium ||
-         image?.original ||
-         "https://st3.depositphotos.com/17828278/33150/v/450/depositphotos_331503262-stock-illustration-no-image-vector-symbol-missing.jpg";
+      img.src = image?.medium || image?.original || "./assets/no-image-placeholder.png";
       img.alt = `${name} poster`;
       card.appendChild(img);
 
@@ -153,5 +146,3 @@ function renderSearchResults(searchResult) {
       main.append(card);
    });
 }
-
-// !---------- Search Input Keydown Event ----------  */
