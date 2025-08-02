@@ -141,6 +141,13 @@ main {
    gap: 1rem;
    justify-content: center;
 }
+main h3 {
+   text-align: center;
+   font-weight: 500;
+   font-size: 1.2rem;
+   margin-bottom: 1rem;
+   width: 100%;
+}
 
 /*! ---------- Show Card Styles     START ----------  */
 
@@ -152,7 +159,8 @@ main {
    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
    overflow: hidden;
    width: 14rem;
-   height: 34rem;
+   height: 36rem;
+   max-width: 40rem;
    transition: transform 0.2s ease;
 }
 
@@ -178,7 +186,7 @@ main {
    font-size: 1rem;
    font-weight: 500;
    color: #e4e4e4;
-   margin-bottom: 0.25rem;
+   margin-bottom: 0.5rem;
 }
 
 .card-details p {

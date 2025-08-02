@@ -25,7 +25,8 @@ searchBtn.addEventListener("click", async function (event) {
    }
 });
 
-//! ---------- Render page with search results ----------  */
+//! ---------- Render page with search results using innerHTML (test) ---------- //
+/*
 function renderSearchResults(searchResult) {
    main.innerHTML = ""; // Clear previous content
 
@@ -73,6 +74,84 @@ function renderSearchResults(searchResult) {
    `;
       })
       .join("");
+} */
+
+//! ---------- Render page with search results (optimized, safe from injection) ---------- //
+
+function renderSearchResults(searchResult) {
+   main.innerHTML = ""; // Clear previous content
+
+   const resultsCount = document.createElement("h3");
+   resultsCount.textContent = `${searchResult.length} result${searchResult.length !== 1 ? "s" : ""} found`;
+   resultsCount.style.marginBottom = "1rem";
+   main.appendChild(resultsCount);
+
+   if (searchResult.length === 0) {
+      //   const message = document.createElement("p");
+      //   message.textContent = "No results found.";
+      //   main.appendChild(message);
+      return;
+   }
+
+   searchResult.forEach((show) => {
+      const { image, name, premiered, genres, rating, type } = show;
+
+      // Create card
+      const card = document.createElement("article");
+      card.className = "show-card";
+
+      // Poster image
+      const img = document.createElement("img");
+      img.src =
+         image?.medium ||
+         image?.original ||
+         "https://st3.depositphotos.com/17828278/33150/v/450/depositphotos_331503262-stock-illustration-no-image-vector-symbol-missing.jpg";
+      img.alt = `${name} poster`;
+      card.appendChild(img);
+
+      // Card details
+      const details = document.createElement("section");
+      details.className = "card-details";
+
+      // Header info
+      const header = document.createElement("section");
+      header.className = "card-header";
+
+      const title = document.createElement("h2");
+      title.textContent = `${name} (${premiered ? premiered.slice(0, 4) : "N/A"})`;
+
+      const genre = document.createElement("p");
+      genre.innerHTML = `<span>🧭</span> Genre: ${genres?.join(", ") || "N/A"}`;
+
+      const ratingEl = document.createElement("p");
+      ratingEl.innerHTML = `<span>⭐</span> Rating: ${rating?.average || "N/A"}`;
+
+      const typeEl = document.createElement("p");
+      typeEl.innerHTML = `<span>🏷️</span> Type: ${type || "N/A"}`;
+
+      header.append(title, genre, ratingEl, typeEl);
+
+      // Buttons
+      const buttons = document.createElement("section");
+      buttons.className = "card-buttons";
+
+      const watchBtn = document.createElement("button");
+      watchBtn.className = "watch-later-btn";
+      watchBtn.title = "🕒 Watch Later";
+      watchBtn.textContent = "🕒 Watch Later";
+
+      const favBtn = document.createElement("button");
+      favBtn.className = "fav-btn-no";
+      favBtn.title = "❤️ Favorite";
+      favBtn.textContent = "❤️ Favorite";
+
+      buttons.append(watchBtn, favBtn);
+
+      // Assemble card
+      details.append(header, buttons);
+      card.append(details);
+      main.append(card);
+   });
 }
 
 // !---------- Search Input Keydown Event ----------  */
