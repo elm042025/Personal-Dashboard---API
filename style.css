@@ -88,7 +88,7 @@ body {
 header {
    width: 100%;
    height: fit-content;
-   background-color: hsl(196, 70%, 15%);
+   background: linear-gradient(to bottom, hsl(196, 70%, 15%), hsla(196, 71%, 15%, 0.75));
    display: flex;
    justify-content: space-between;
    align-items: center;
@@ -193,6 +193,7 @@ main h3 {
    font-weight: 500;
    color: #e4e4e4;
    margin-bottom: 0.5rem;
+   display: inline;
 }
 
 .card-details p {
@@ -226,7 +227,7 @@ main h3 {
    background-color: #b91d41;
    color: #ffffff;
 }
-.watched-btn {
+.watch-later-btn-added {
    background-color: #1ed760;
    color: #ffffff;
 }
