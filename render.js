@@ -12,8 +12,10 @@ export function renderSearchResults(searchResult) {
    searchResult.forEach((show) => {
       const { image, name, premiered, genres, rating, type, id, ...rest } = show;
 
-      const savedShows = JSON.parse(localStorage.getItem("watchLaterShows")) || [];
-      const isSaved = savedShows.includes(name);
+      const watchLaterShows = JSON.parse(localStorage.getItem("watchLaterShows")) || [];
+      const isSavedWatchLater = watchLaterShows.includes(name);
+      const favoriteShows = JSON.parse(localStorage.getItem("favoriteShows")) || [];
+      const isFavorited = favoriteShows.includes(name);
 
       const card = document.createElement("article");
       card.className = "show-card";
@@ -21,7 +23,7 @@ export function renderSearchResults(searchResult) {
 
       const img = document.createElement("img");
       img.src = image?.medium || image?.original || "./assets/no-image-placeholder.png";
-      img.alt = `${name} poster`;
+      img.alt = image ? `${name} poster` : "No image available";
       card.appendChild(img);
 
       const details = document.createElement("section");
@@ -52,7 +54,7 @@ export function renderSearchResults(searchResult) {
 
       const watchBtn = document.createElement("button");
 
-      if (isSaved) {
+      if (isSavedWatchLater) {
          watchBtn.className = "watch-later-btn-added";
          watchBtn.textContent = "✔️ Added to Watch Later";
          watchBtn.title = "🕒 Remove from Watch Later List";
@@ -63,10 +65,15 @@ export function renderSearchResults(searchResult) {
       }
 
       const favBtn = document.createElement("button");
-      favBtn.className = "fav-btn-no";
-      favBtn.dataset.id = `fav-btn-${id}`;
-      favBtn.title = "🤍 Add to Favorites List";
-      favBtn.textContent = "🤍 Favorite";
+      if (isFavorited) {
+         favBtn.className = "fav-btn-yes";
+         favBtn.textContent = "❤️ Favorited";
+         favBtn.title = "❤️ Remove from Favorites";
+      } else {
+         favBtn.className = "fav-btn-no";
+         favBtn.textContent = "🤍 Favorite";
+         favBtn.title = "🤍 Add to Favorites";
+      }
 
       buttons.append(watchBtn, favBtn);
 
