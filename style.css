@@ -48,34 +48,35 @@ body {
 }
 #sidebar ul {
    list-style: none;
-   padding: 0.25rem 0;
    cursor: pointer;
    display: flex;
    flex-direction: column;
-   border-radius: 0.5rem;
+   gap: 1rem;
 }
-#sidebar a {
-   text-decoration: none;
-   color: #ffffff;
+
+#sidebar button.sidebar-btn {
+   all: unset;
+   text-align: left;
    font-size: 1rem;
    background-color: hsl(196, 70%, 15%);
    display: flex;
    align-items: center;
    gap: 1.25rem;
-   margin: 0.5rem 0;
-   padding: 0.25rem 0.5rem;
    border-radius: 0.5rem;
    overflow: hidden;
+   cursor: pointer;
+   width: 100%;
 }
-#sidebar a p {
+#sidebar button.sidebar-btn p {
    white-space: nowrap;
    font-size: 1rem;
 }
 #sidebar lord-icon {
    flex-shrink: 0;
+   padding-left: 0.5rem;
 }
-#sidebar a:hover,
-#sidebar a.active {
+#sidebar button.sidebar-btn:hover,
+#sidebar button.sidebar-btn.active {
    background-color: hsl(196, 70%, 20%);
 }
 /*! ---------- Main Content Styles (Header + Main hero section) ----------  */
