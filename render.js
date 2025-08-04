@@ -10,7 +10,7 @@ export function renderSearchResults(searchResult) {
    if (searchResult.length === 0) return;
 
    searchResult.forEach((show) => {
-      const { image, name, premiered, genres, rating, type, id } = show;
+      const { image, name, premiered, genres, rating, type, id, ...rest } = show;
 
       const savedShows = JSON.parse(localStorage.getItem("watchLaterShows")) || [];
       const isSaved = savedShows.includes(name);

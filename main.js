@@ -6,6 +6,7 @@ import { handleFavoriteToggle } from "./localStorage.js";
 const searchBtn = document.querySelector("#search-button");
 const searchInput = document.querySelector("#search-input");
 const main = document.querySelector("#main-content");
+const watchLaterListBtn = document.querySelector("#watch-later");
 const watchLaterShows = JSON.parse(localStorage.getItem("watchLaterShows")) || [];
 const favoriteShows = JSON.parse(localStorage.getItem("favoriteShows")) || [];
 //!
