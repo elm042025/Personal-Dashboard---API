@@ -38,7 +38,7 @@ main.addEventListener("click", handleWatchLaterToggle);
 
 main.addEventListener("click", handleFavoriteToggle);
 
-//! Render watch later shows when the button is clicked
+//! Render watch later shows from localStorage when the button is clicked
 watchLaterListBtn.addEventListener("click", async function () {
    const savedNames = JSON.parse(localStorage.getItem("watchLaterShows")) || [];
 
@@ -64,7 +64,7 @@ watchLaterListBtn.addEventListener("click", async function () {
    renderSearchResults(fetchedShows);
 });
 
-//! Render favorite shows when the button is clicked
+//! Render favorite shows from localStorage when the button is clicked
 favoriteListBtn.addEventListener("click", async function () {
    const savedNames = JSON.parse(localStorage.getItem("favoriteShows")) || [];
 
