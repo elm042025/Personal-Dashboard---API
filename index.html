@@ -68,7 +68,10 @@
             </li>
 
             <li id="movies">
-               <button class="sidebar-btn">
+               <button
+                  class="sidebar-btn"
+                  disabled
+               >
                   <lord-icon
                      src="https://cdn.lordicon.com/ugllxeyl.json"
                      trigger="in"
@@ -83,7 +86,10 @@
             </li>
 
             <li id="tv-shows">
-               <button class="sidebar-btn">
+               <button
+                  class="sidebar-btn"
+                  disabled
+               >
                   <lord-icon
                      src="https://cdn.lordicon.com/qfwgmyhc.json"
                      trigger="in"
@@ -128,7 +134,10 @@
             </li>
 
             <li id="watched">
-               <button class="sidebar-btn">
+               <button
+                  class="sidebar-btn"
+                  disabled
+               >
                   <lord-icon
                      src="https://cdn.lordicon.com/dicvhxpz.json"
                      trigger="in"
@@ -182,12 +191,70 @@
             </section>
          </header>
          <main id="main-content">
-            <h2 class="width-100">Welcome to Your Watchlist Dashboard</h2>
-            <br />
-            <p class="width-100">Use the search bar above to find your favorite TV shows and manage your watchlist.</p>
-            <br />
-            <p class="width-100">Click on the icons in the sidebar to navigate through different sections of your watchlist.</p>
+            <h2 class="width-100">🎬 Welcome to Watchlist Dashboard</h2>
+
+            <section class="dashboard-intro width-100">
+               <div class="dashboard-card">
+                  <lord-icon
+                     src="https://cdn.lordicon.com/yudxjmzy.json"
+                     trigger="loop"
+                     state=""
+                     colors="primary:#ebe6ef,secondary:#16a9c7,tertiary:#107c91"
+                     style="width: 3rem; height: 3rem"
+                  >
+                  </lord-icon>
+                  <h3>Search Shows</h3>
+                  <p>Find TV shows and sitcoms instantly.</p>
+               </div>
+
+               <div class="dashboard-card">
+                  <lord-icon
+                     src="https://cdn.lordicon.com/sgtmgpft.json"
+                     trigger="loop"
+                     state=""
+                     colors="primary:#3a3347,secondary:#ebe6ef,tertiary:#16a9c7,quaternary:#f24c00"
+                     style="width: 3rem; height: 3rem"
+                  >
+                  </lord-icon>
+                  <h3>Watch Later</h3>
+                  <p>Save shows to view later.</p>
+               </div>
+
+               <div class="dashboard-card">
+                  <lord-icon
+                     src="https://cdn.lordicon.com/ajzwsrcs.json"
+                     trigger="loop"
+                     state=""
+                     colors="primary:#ee6d66,secondary:#16a9c7,tertiary:#ffc738,quaternary:#f9c9c0,quinary:#f24c00"
+                     style="width: 3rem; height: 3rem"
+                  >
+                  </lord-icon>
+                  <h3>Favorites</h3>
+                  <p>Keep track of your favorites.</p>
+               </div>
+
+               <div class="dashboard-card">
+                  <lord-icon
+                     src="https://cdn.lordicon.com/yrtftktn.json"
+                     trigger="loop"
+                     state=""
+                     colors="primary:#ffc738,secondary:#107c91"
+                     style="width: 3rem; height: 3rem"
+                  >
+                  </lord-icon>
+                  <h3>Organized Lists</h3>
+                  <p>Switch between sections easily.</p>
+               </div>
+            </section>
+
+            <p
+               class="width-100"
+               style="margin-top: 2rem; opacity: 0.7; font-size: 0.9rem"
+            >
+               Your data is saved locally — no sign-in required.
+            </p>
          </main>
+
          <footer></footer>
       </section>
    </body>

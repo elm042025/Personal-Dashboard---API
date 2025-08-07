@@ -81,6 +81,10 @@ body {
 #sidebar button.sidebar-btn.active {
    background-color: hsl(196, 70%, 20%);
 }
+#sidebar button:disabled {
+   opacity: 0.5;
+   cursor: not-allowed;
+}
 /*! ---------- Main Content Styles (Header + Main hero section) ----------  */
 #content {
    width: 100%;
@@ -115,7 +119,7 @@ header {
 #search:hover,
 #search:focus-within,
 #search:focus {
-   width: 18rem;
+   width: 25rem;
 }
 #search button {
    background-color: transparent;
@@ -149,12 +153,49 @@ main {
    gap: 1rem;
    justify-content: center;
 }
+main h2 {
+   font-weight: 400;
+}
 main h3 {
    text-align: center;
-   font-weight: 500;
+   font-weight: 400;
    font-size: 1.2rem;
    margin-bottom: 1rem;
    width: 100%;
+}
+.dashboard-intro {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 1rem;
+   justify-content: center;
+   margin-top: 1rem;
+}
+
+.dashboard-card {
+   background-color: hsl(196, 70%, 15%);
+   border-radius: 0.5rem;
+   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+   padding: 1rem;
+   width: 11rem;
+   text-align: center;
+   transition: transform 0.2s ease;
+}
+
+.dashboard-card:hover {
+   transform: scale(1.05);
+}
+
+.dashboard-card .icon {
+   font-size: 2rem;
+   margin-bottom: 0.5rem;
+}
+
+.dashboard-card p {
+   font-size: 0.85rem;
+   color: #ccc;
+}
+.dashboard-card lord-icon {
+   margin-bottom: 1rem;
 }
 
 /*! ---------- Show Card Styles     START ----------  */
