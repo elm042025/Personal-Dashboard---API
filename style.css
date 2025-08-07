@@ -133,6 +133,7 @@ header {
    outline: none;
    color: #ffffff;
    font-size: 1rem;
+   width: 100%;
 }
 #search input::placeholder {
    color: #cccccc;
@@ -154,7 +155,13 @@ main {
    justify-content: center;
 }
 main h2 {
+   margin: 2rem 0;
    font-weight: 400;
+   display: flex;
+   gap: 1rem;
+   align-items: center;
+   justify-content: center;
+   text-align: center;
 }
 main h3 {
    text-align: center;
